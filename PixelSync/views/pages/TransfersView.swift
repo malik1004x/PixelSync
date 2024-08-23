@@ -28,7 +28,8 @@ struct TransfersView: View {
                     } else if let uploadItem = transfer as? UploadTransfer {
                         UploadListItem(transfer: uploadItem)
                     }
-                }
+                    Divider()
+                }.padding(.horizontal, 20)
             }.fileImporter(isPresented: $showFileImporter, allowedContentTypes: [.item],  allowsMultipleSelection: true) { result in
                 switch result {
                 case .success(let files):
