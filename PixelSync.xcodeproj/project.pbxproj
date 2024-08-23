@@ -14,6 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		842EA1572C785157004015BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		846B362D2C58351C0020A0A6 /* PixelSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846B36302C58351C0020A0A6 /* PixelSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelSyncApp.swift; sourceTree = "<group>"; };
 		846B36342C58351D0020A0A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		846B36242C58351C0020A0A6 = {
 			isa = PBXGroup;
 			children = (
+				842EA1572C785157004015BB /* README.md */,
 				846B362F2C58351C0020A0A6 /* PixelSync */,
 				846B362E2C58351C0020A0A6 /* Products */,
 			);
