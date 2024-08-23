@@ -26,10 +26,7 @@ struct ProfileUtilityButtons: View {
                     Text("Quit")
                 }
             }.buttonStyle(.link)
-            Button(action: {
-                apiConnection = nil
-                KeyStorage.removeKey()
-            }) {
+            Button(action: {LoginHelper.logout(apiConnection: &apiConnection)}) {
                 VStack {
                     Image(systemName: "person.crop.circle.badge.xmark")
                     Text("Logout")

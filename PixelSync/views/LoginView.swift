@@ -21,9 +21,7 @@ struct LoginView: View {
                 let pattern = /[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}/
                 do {
                     if (try pattern.firstMatch(in: apiKeyString)) != nil {
-                        apiConnection = PixeldrainAPI(apiKey: apiKeyString, delegate: transferManager)
-                        transferManager.addApiConnection(apiConnection: apiConnection!)
-                        KeyStorage.storeKey(apiKeyString)
+                        LoginHelper.login(apiKey: apiKeyString, apiConnection: &apiConnection, transferManager: transferManager)
                     } else {
                         bottomText = "That's not a correct API key."
                     }

@@ -18,8 +18,7 @@ struct PixelSyncApp: App {
             ContentView(apiConnection: $apiConnection, transferManager: transferManager).onAppear() {
                 let key = KeyStorage.getKey()
                 if key != nil {
-                    apiConnection = PixeldrainAPI(apiKey: key!, delegate: transferManager)
-                    transferManager.addApiConnection(apiConnection: apiConnection!)
+                    LoginHelper.login(apiKey: key!, apiConnection: &apiConnection, transferManager: transferManager)
                 }
             }
         } label: {
