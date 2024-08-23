@@ -12,6 +12,7 @@ struct ListsView: View {
     @Binding var apiConnection: PixeldrainAPI?
     @ObservedObject var transferManager: TransferManager
     @State private var lists: [PixeldrainListInfo]?
+    @State private var searchQuery: String = ""
     
     var body: some View {
         if apiConnection == nil {

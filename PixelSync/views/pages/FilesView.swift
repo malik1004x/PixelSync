@@ -12,6 +12,7 @@ struct FilesView: View {
     @Binding var apiConnection: PixeldrainAPI?
     @ObservedObject var transferManager: TransferManager
     @State private var fileList: [PixeldrainFileInfo]?
+    @State private var searchQuery: String = ""
     
     var body: some View {
         if apiConnection == nil {
