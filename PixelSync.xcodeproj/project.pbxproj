@@ -47,6 +47,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				formatters.swift,
+				KeyStorage.swift,
 			);
 			target = 846B362C2C58351C0020A0A6 /* PixelSync */;
 		};

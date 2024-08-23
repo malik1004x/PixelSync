@@ -23,6 +23,7 @@ struct LoginView: View {
                     if (try pattern.firstMatch(in: apiKeyString)) != nil {
                         apiConnection = PixeldrainAPI(apiKey: apiKeyString, delegate: transferManager)
                         transferManager.addApiConnection(apiConnection: apiConnection!)
+                        KeyStorage.storeKey(apiKeyString)
                     } else {
                         bottomText = "That's not a correct API key."
                     }

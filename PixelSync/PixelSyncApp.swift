@@ -15,7 +15,13 @@ struct PixelSyncApp: App {
     
     var body: some Scene {
         MenuBarExtra {
-            ContentView(apiConnection: $apiConnection, transferManager: transferManager)
+            ContentView(apiConnection: $apiConnection, transferManager: transferManager).onAppear() {
+                let key = KeyStorage.getKey()
+                if key != nil {
+                    apiConnection = PixeldrainAPI(apiKey: key!, delegate: transferManager)
+                    transferManager.addApiConnection(apiConnection: apiConnection!)
+                }
+            }
         } label: {
             let image: NSImage = {
                 $0.size.height = 18
