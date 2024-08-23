@@ -24,10 +24,14 @@ struct FilesView: View {
                     }
                 }
             } else {
-                ScrollView {
-                    ForEach(fileList!, id: \.id) { file in
-                        FileListItem(transferManager: transferManager, fileInfo: file)
-                        Divider()
+                VStack {
+                    HStack {
+                        TextField("Search", text: $searchQuery).cornerRadius(15).padding(.horizontal, 15)
+                    }.padding(.top, 15)
+                    List (fileList!.filter {file in
+                        searchQuery.isEmpty || file.name.lowercased().contains(searchQuery.lowercased())
+                    }, id: \.id) { file in
+                        FileListItem(transferManager: transferManager, fileInfo: file).padding(.horizontal, 10)
                     }
                 }
             }

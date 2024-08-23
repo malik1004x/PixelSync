@@ -24,10 +24,14 @@ struct ListsView: View {
                     }
                 }
             } else {
-                ScrollView {
-                    ForEach(lists!, id: \.id) { list in
-                        ListListItem(listInfo: list, transferManager: transferManager, apiConnection: $apiConnection)
-                        Divider()
+                VStack {
+                    HStack {
+                        TextField("Search", text: $searchQuery).cornerRadius(15).padding(.horizontal, 15)
+                    }.padding(.top, 15)
+                    List (lists!.filter {list in
+                        searchQuery.isEmpty || list.title.lowercased().contains(searchQuery.lowercased())
+                    }, id: \.id) { list in
+                        ListListItem(listInfo: list, transferManager: transferManager, apiConnection: $apiConnection).padding(.horizontal, 10)
                     }
                 }
             }
